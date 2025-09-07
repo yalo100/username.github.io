@@ -22,7 +22,6 @@
       line-height:1.6;
       background:#fff;
     }
-
     /* Header / Bandeau */
     header{
       width:100%;
