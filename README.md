@@ -1,1 +1,313 @@
 # username.github.io
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Copie Latifa Khalifa – Centre d’impression & photocopie</title>
+  <meta name="description" content="Copie Latifa Khalifa – 26 ans d’expérience. Impression & photocopie (papier 80 g), polycopes pour les études de médecine, pharmacie et dentaire. Livraison devant la fac (gratuite) et à domicile sur Casablanca et hors Casablanca." />
+  <link rel="icon" href="logo.png">
+  <style>
+    :root{
+      --bleu:#0b2c88;
+      --bleuFonce:#1a237e;
+      --gris:#f5f7fb;
+      --txt:#222;
+      --accent:#00c853;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Segoe UI',Roboto,Arial,sans-serif;
+      color:var(--txt);
+      line-height:1.6;
+      background:#fff;
+    }
+
+    /* Header / Bandeau */
+    header{
+      width:100%;
+      background:var(--bleuFonce);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:32px 16px;
+    }
+    header img{
+      max-width:min(90vw, 360px);
+      height:auto;
+    }
+
+    /* Nav */
+    nav{
+      background:var(--bleu);
+      position:sticky; top:0; z-index:100;
+      box-shadow:0 2px 6px rgba(0,0,0,.12);
+    }
+    .nav-inner{
+      max-width:1200px; margin:auto; padding:12px 18px;
+      display:flex; gap:24px; justify-content:center; flex-wrap:wrap;
+    }
+    nav a{
+      color:#fff; text-decoration:none; font-weight:600;
+      padding:6px 8px; border-radius:6px; transition:background .25s;
+    }
+    nav a:hover{ background:rgba(255,255,255,.12) }
+
+    /* Sections */
+    section{ max-width:1100px; margin:auto; padding:60px 20px }
+    h2{ text-align:center; font-size:2rem; color:var(--bleuFonce); margin-bottom:10px }
+    .slogan{
+      text-align:center; font-style:italic; color:#555; margin:6px auto 22px; max-width:800px
+    }
+    .lead{ text-align:center; max-width:900px; margin:0 auto }
+
+    /* Image d’accueil étirée */
+    .accueil-img-container{
+      background:var(--bleu);
+      padding:10px 0;
+    }
+    .accueil-img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    /* Badges */
+    .badges{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:14px }
+    .badge{
+      background:var(--gris); color:#333; padding:8px 12px; border-radius:999px; font-weight:600; font-size:.95rem;
+      border:1px solid #e6e9f3;
+    }
+    .badge--accent{ background:#e8f6ee; color:#0a7f3c; border:1px solid #bfead0 }
+
+    /* Services */
+    .cards{
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:22px; margin-top:28px;
+    }
+    .card{
+      background:#fff; border:1px solid #e9edf5; border-radius:14px;
+      box-shadow:0 6px 18px rgba(10,20,60,.06);
+      padding:22px; transition:transform .25s;
+    }
+    .card:hover{ transform:translateY(-6px) }
+    .card h3{ color:var(--bleu); margin-bottom:8px }
+    .muted{ color:#666 }
+
+    /* Bloc “features” */
+    .features{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; margin-top:22px }
+    .feature{ background:var(--gris); border:1px solid #e6ebf5; border-radius:12px; padding:18px }
+
+    /* Qualité / Tarifs */
+    .highlight{
+      background:linear-gradient(180deg,#f9fbff,#eef3ff);
+      border:1px solid #e0e8ff; border-radius:16px; padding:20px; margin-top:22px;
+      text-align:center;
+    }
+    .highlight strong{ color:#0a5bd3 }
+
+    /* Contact */
+    .contact-grid{ display:grid; grid-template-columns:1.2fr .8fr; gap:24px; margin-top:24px }
+    .contact-list{ list-style:none; border:1px solid #e9edf5; border-radius:12px; padding:18px }
+    .contact-list li{ padding:10px 0; border-bottom:1px dashed #e6e6e6 }
+    .contact-list li:last-child{ border-bottom:0 }
+    .cta{
+      margin-top:16px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center
+    }
+    .btn{
+      background:var(--accent); color:#fff; border:0; padding:10px 16px; border-radius:10px; font-weight:700;
+      text-decoration:none; display:inline-block
+    }
+    .btn--outline{ background:#fff; color:var(--bleuFonce); border:2px solid var(--bleuFonce) }
+
+    /* Avis */
+    .reviews{
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; margin-top:20px
+    }
+    .review{
+      border:1px solid #e9edf5; border-radius:12px; padding:16px; background:#fff
+    }
+    .stars{ color:#ffb300; letter-spacing:2px; font-size:1.1rem }
+
+    /* Footer */
+    footer{
+      background:var(--bleuFonce); color:#fff; text-align:center; padding:22px; margin-top:40px; font-size:.95rem
+    }
+
+    /* WhatsApp flottant (version clean) */
+    .whatsapp-float{
+      position:fixed; right:18px; bottom:18px; z-index:9999;
+      width:60px; height:60px; border-radius:50%;
+      background:#25D366; color:#fff; display:flex; align-items:center; justify-content:center;
+      box-shadow:0 12px 28px rgba(37,211,102,.35);
+      text-decoration:none; transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .whatsapp-float:hover{
+      transform:translateY(-2px) scale(1.03);
+      box-shadow:0 16px 32px rgba(37,211,102,.45);
+    }
+    .whatsapp-float svg{ width:30px; height:30px; fill:#fff; display:block }
+
+    /* Responsive */
+    @media (max-width:900px){ .contact-grid{ grid-template-columns:1fr } }
+    @media (max-width:768px){
+      .accueil-img-container{ padding:6px 0 }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Bandeau -->
+  <header>
+    <img src="logo.png" alt="Copie Latifa Khalifa – Logo">
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#accueil">Accueil</a>
+      <a href="#contact">Contact</a>
+      <a href="#apropos">À propos</a>
+      <a href="#services">Services</a>
+      <a href="#qualite">Qualité & tarifs</a>
+      <a href="#avis">Avis</a>
+    </div>
+  </nav>
+
+  <!-- Accueil -->
+  <section id="accueil">
+    <h2>Bienvenue</h2>
+    <p class="slogan">« Notre savoir va vous laisser bonne impression »</p>
+    <p class="lead">
+      Depuis 26 ans, <strong>Copie Latifa Khalifa</strong> accompagne des générations d’étudiants
+      en <strong>médecine</strong>, <strong>pharmacie</strong> et <strong>dentaire</strong> : impression & photocopie,
+      <strong>polycopes</strong>, reliure, plastification et plus encore.
+    </p>
+    <!-- Image magasin étirée avec bordures bleues -->
+    <div class="accueil-img-container">
+      <img src="IMG_3422.jpg" alt="Magasin Copie Latifa Khalifa" class="accueil-img">
+    </div>
+    <div class="badges">
+      <span class="badge">26 ans d’expérience</span>
+      <span class="badge">Polycopes & documentation santé</span>
+      <span class="badge badge--accent">Livraison devant la fac (gratuite)</span>
+      <span class="badge">Livraison à domicile (Casablanca & hors Casa)</span>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <ul class="contact-list">
+        <li><strong>Adresse :</strong><br> RESIDENCE MAJORELLE 6, BD MED TAYEB NACIRI – Casablanca</li>
+        <li><strong>Téléphone :</strong> <a href="tel:+212612164107">06 12 16 41 07</a> (appels & WhatsApp)</li>
+        <li><strong>WhatsApp :</strong> <a href="https://wa.me/212612164107" target="_blank" rel="noopener">Écrire sur WhatsApp</a></li>
+        <li><strong>Email :</strong> <a href="mailto:copielatifakhalifa@gmail.com">copielatifakhalifa@gmail.com</a></li>
+        <li><strong>Horaires :</strong><br>
+          Lun–Sam : 10h–19h<br>
+          <em>Période d’examens :</em> Lun–Dim, 10h–19h
+        </li>
+      </ul>
+      <div style="border:1px solid #e9edf5; border-radius:12px; overflow:hidden; min-height:300px">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d53201.5569312514!2d-7.742723!3d33.550848!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda62d003fdc81d5%3A0xc79924c5944a1f9f!2sCopie%20Latifa!5e0!3m2!1sfr!2sma!4v1755816130991!5m2!1sfr!2sma" width="600" height="450" style="border:0;" allowfullscreen="" loading="quick" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+    <div class="cta">
+      <a class="btn" href="tel:+212612164107">Appeler maintenant</a>
+      <a class="btn btn--outline" href="mailto:copielatifakhalifa@gmail.com">Envoyer un e‑mail</a>
+      <a class="btn" style="background:#25D366" href="https://wa.me/212612164107" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- À propos -->
+  <section id="apropos">
+    <h2>À propos</h2>
+    <p class="lead">
+      Notre histoire s’écrit depuis plus de deux décennies avec la réussite des étudiants.
+      Opérant dans plusieurs villes du Maroc, nous avons accompagné des promotions entières jusqu’au diplôme,
+      puis l’encadrement académique.
+    </p>
+    <div class="features">
+      <div class="feature"><strong>Fiabilité</strong><br> Process maîtrisés, délais rapides, constance de qualité.</div>
+      <div class="feature"><strong>Proximité</strong><br> Écoute, conseils d’impression, formats et finitions adaptés.</div>
+      <div class="feature"><strong>Souplesse</strong><br> Commandes par téléphone/WhatsApp, retrait en magasin ou livraison.</div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <h2>Nos services</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Photocopies & impressions</h3>
+        <p class="muted">Noir & blanc, couleur, A4/A3, tirages pro, mise en page & PDF.</p>
+      </div>
+      <div class="card">
+        <h3>Polycopes – Santé</h3>
+        <p class="muted">Polycopes et documentation pour les études de médecine, pharmacie et dentaire.</p>
+      </div>
+      <div class="card">
+        <h3>Reliure & plastification</h3>
+        <p class="muted">Reliure spirale, travaux de thèse/mémoires, protection durable des documents.</p>
+      </div>
+      <div class="card">
+        <h3>Traitement de texte</h3>
+        <p class="muted">Correction, mise en page soignée, exports prêts à imprimer.</p>
+      </div>
+      <div class="card">
+        <h3>Livraison devant la fac</h3>
+        <p class="muted"><strong>Gratuite</strong> à proximité (point de rendez‑vous convenu).</p>
+      </div>
+      <div class="card">
+        <h3>Livraison à domicile</h3>
+        <p class="muted">Sur Casablanca et hors Casablanca, avec <strong>frais raisonnables</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Qualité & tarifs -->
+  <section id="qualite">
+    <h2>Qualité & tarifs</h2>
+    <div class="highlight">
+      <p><strong>Papier 80 g</strong> de qualité supérieure pour des impressions nettes et professionnelles.</p>
+      <p style="margin-top:10px">Des <strong>tarifs étudiants</strong> sont proposés toute l’année (détails en magasin ou sur demande).</p>
+    </div>
+  </section>
+
+  <!-- Avis -->
+  <section id="avis">
+    <h2>Avis de nos clients</h2>
+    <p class="lead">Cliquez ci‑dessous pour consulter tous les avis sur Google.</p>
+    <div class="reviews">
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        Service rapide et super qualité. Mes polycopes étaient prêts à l’heure. Je recommande !
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        Très pro, papier 80 g, reliure propre. Livraison devant la fac pratique pendant les examens.
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        Bon rapport qualité/prix et équipe à l’écoute. J’y retournerai.
+      </div>
+    </div>
+    <div class="cta">
+      <a class="btn btn--outline" href="https://maps.app.goo.gl/7KegGy1FyNKx36ey6" target="_blank" rel="noopener">Voir plus d’avis / Ouvrir la carte</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Copie Latifa Khalifa — Tous droits réservés
+  </footer>
+
+  <!-- Bouton WhatsApp flottant — version clean -->
+  <a class="whatsapp-float" href="https://wa.me/212612164107" target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.28c-.28-.1-1-.47-1.15-.55-.15-.07-.25-.1-.36.04-.11.14-.41.48-.5.58-.09.1-.18.12-.34.05-.16-.07-.68-.25-1.3-.78-.47-.4-.79-.89-.88-1.04-.09-.15-.01-.24.06-.32.06-.07.14-.17.22-.26.07-.09.1-.16.15-.26.05-.1.03-.19 0-.27l-.36-.9c-.1-.24-.2-.24-.3-.24h-.26c-.1 0-.27.04-.41.19-.14.14-.54.53-.54 1.28 0 .75.56 1.47.64 1.57.08.1 1.1 1.76 2.7 2.47.38.17.67.27.9.35.38.12.72.1.99.06.3-.04.93-.38 1.06-.75.13-.37.13-.69.09-.76-.04-.07-.14-.11-.28-.16z"/>
+      <path d="M27 14.5A10.5 10.5 0 0 1 11.24 24.9L6 26l1.19-5.07A10.5 10.5 0 1 1 27 14.5zm-2.02 7.88c-.43 1.02-1.78 1.76-2.87 1.99-.87.18-2 .18-3.31-.17-3.67-1.05-6-4.45-6.17-4.63-.17-.18-1.51-1.94-1.51-3.64 0-1.7.95-2.52 1.28-2.86.33-.34.73-.39.97-.39h.7c.22 0 .56.08.79.62.23.54.5 1.38.55 1.48.05.1.08.22.01.36-.07.14-.11.23-.22.36-.11.13-.23.3-.33.4-.11.1-.23.21-.1.47.13.26.57 1.12 1.24 1.8.85.88 1.89 1.28 2.17 1.42.27.14.43.12.58-.07.15-.19.66-.77.83-1.04.17-.27.35-.22.58-.13.23.09 1.46.69 1.71.82.25.13.41.19.47.3.06.11.06 1.01-.37 2.03z"/>
+    </svg>
+  </a>
+
+</body>
+</html>
